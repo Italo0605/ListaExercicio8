@@ -11,7 +11,7 @@ public class Pessoa {
     }
 
     public void envelhecer(int anos){
-        this.idade -=anos;
+        this.idade +=anos;
         if(this.idade <= 21){
             this.altura+= 0.5;
         }
@@ -29,18 +29,26 @@ public class Pessoa {
         this.altura +=alturaSoma;
     }
 
+
     public String getData(String atributo){
+        String retorno;
         switch (atributo) {
             case "idade":
-                return String.format("%d",this.idade);
+                retorno = String.valueOf(this.idade);
+                break;
             case "nome":
-                return String.format("%d", this.nome);
+                retorno = this.nome;
+                break;
             case "peso":
-                return String.format("%d", this.peso);
+                retorno = String.valueOf(this.peso);
+                break;
             case "altura":
-                return String.format("%d%",this.altura);
+                retorno = String.valueOf(this.altura);
+                break;
             default:
-                return "por favor escreva o nome do atibuto em minusco e sem acentos!";
+                retorno = "por favor escreva o nome do atibuto em minusculo e sem acentos!";
+                break;
         }
+        return retorno;
     }
 }
